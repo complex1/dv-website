@@ -30,6 +30,57 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .slot-btn {
+            border: 1px solid #29687a !important;
+            color: #29687a !important;
+        }
+
+        .slot-btn:hover,
+        .slot-btn-selected {
+            border: 1px solid #29687a !important;
+            color: #fff !important;
+            background-color: #29687a !important;
+        }
+
+        .theme-btn.disabled {
+            color: #6d6d6d !important;
+            background-color: #bdbdbd !important;
+            border: #bdbdbd !important;
+            cursor: disabled !important;
+        }
+
+        .flex-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-mask:after {
+            display: block;
+            content: '';
+            height: 30px;
+            width: 30px;
+            border: 4px solid white;
+            border-bottom-color: rgba(255, 255, 255, 0.35);
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+    </style>
 </head>
 
 <body>
@@ -154,57 +205,85 @@
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a href="mailto:arivuhealthcare@gmail.co" class="d-flex justify-content-lg-center bg-primary p-4">
+                    <a href="mailto:arivuhealthcare@gmail.com" class="d-flex justify-content-lg-center bg-primary p-4">
                         <div class="icon-box-light flex-shrink-0">
                             <i class="bi bi-envelope text-dark"></i>
                         </div>
                         <div class="ms-3">
                             <h5 class="text-white">Mail Us</h5>
-                            <h2 class="text-white mb-0">arivuhealthcare@gmail.co</h2>
+                            <h2 class="text-white mb-0">arivuhealthcare@gmail.com
+                            </h2>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                    <h3>Book Appointment</h3>
+                    <form class="default-form pt-3" id="appointmentBooking">
+                        <div class="mb-3 d-flex " style="grid-gap: 10px">
+                            <select class="form-select mr-3" style="width: 120px;" id="nameTitle" name="nameTitle">
+                                <option selected value="MR">Mr</option>
+                                <option value="MRS">Mrs</option>
+                                <option value="MS">Ms</option>
+                                <option value="DR">Dr</option>
+                            </select>
+                            <input type="text" class="form-control" id="fullName" placeholder="Your Name"
+                                name="fullName">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" id="phoneNumber" pattern="[0-9]{10}"
+                                placeholder="Phone Number" name="phoneNumber">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" id="doctorList" name="doctorCode">
+                            </select>
+                        </div>
+                        <div id="setTimeSlot" class="time-slot d-flex justify-content-end">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="return false;">Select
+                                Slot</a>
+                        </div>
+                        <div class="modal fade" id="timeSlotModal" tabindex="-1" aria-labelledby="timeSlotModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="timeSlotModalLabel">Select Time Slot</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <span class="mx-2">Select Date</span>
+                                            <input type="date" class="form-control" id="doctorDate"
+                                                style="width: 200px">
+                                        </div>
+                                        <div class="d-flex flex-wrap justify-content-between" id="timeSlotContainer">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
+                        </div>
+                        <div class="alert alert-danger mt-3" role="alert" id="validationError">
+                        </div>
+                        <div class="form-input d-flex justify-content-end " style="padding-top: 20px;">
+                            <button id="submitAppointment" class="theme-btn btn btn-primary py-2 px-3" name="submit"
+                                value="Submit Now">
+                                Book Appointment
+                            </button>
                         </div>
                     </form>
                 </div>
+
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <iframe class="w-100 h-100"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&q=place_id:ChIJw3HrlzbXuDsRG28HZoKgmXg"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&q=place_id:ChIJw3HrlzbXuDsRG28HZoKgmXg"
+                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
                 </div>
             </div>
         </div>
@@ -273,7 +352,8 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -284,9 +364,13 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="./js/bookAppointment.js"></script>
 </body>
 
 </html>
