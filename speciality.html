@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ARIVU Health Care</title>
+    <title>ARIVU HEALTH CARE</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -30,57 +30,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        .slot-btn {
-            border: 1px solid #29687a !important;
-            color: #29687a !important;
-        }
-
-        .slot-btn:hover,
-        .slot-btn-selected {
-            border: 1px solid #29687a !important;
-            color: #fff !important;
-            background-color: #29687a !important;
-        }
-
-        .theme-btn.disabled {
-            color: #6d6d6d !important;
-            background-color: #bdbdbd !important;
-            border: #bdbdbd !important;
-            cursor: disabled !important;
-        }
-
-        .flex-mask {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .flex-mask:after {
-            display: block;
-            content: '';
-            height: 30px;
-            width: 30px;
-            border: 4px solid white;
-            border-bottom-color: rgba(255, 255, 255, 0.35);
-            border-radius: 50%;
-            animation: rotate 1s linear infinite;
-        }
-
-        @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-
-        }
-    </style>
 </head>
 
 <body>
@@ -152,10 +101,10 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="speciality.html" class="nav-item nav-link">Speciality</a>
+                        <a href="speciality.html" class="nav-item nav-link active">Speciality</a>
                         <a href="team.html" class="nav-item nav-link">Our Team</a>
                         <a href="appoinment.html" class="nav-item nav-link">Appoinment</a>
-                        <!-- <a href="contact.html" class="nav-item nav-link active">Contact</a> -->
+                        <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
                     </div>
                     <!-- <div class="ms-auto d-none d-lg-flex">
                         <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -173,122 +122,186 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5 mt-4">
-            <!-- <h1 class="display-2 text-white mb-3 animated slideInDown">Contact</h1>
+            <h1 class="display-2 text-white mb-3 animated slideInDown">Speciality</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Contact</li>
+                    <li class="breadcrumb-item" aria-current="page">Speciality</li>
                 </ol>
-            </nav> -->
+            </nav>
         </div>
     </div>
     <!-- Page Header End -->
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="display-6 mb-3">Have Any Query? Feel Free To Contact Us</h1>
+    <!-- Service Start -->
+    <div class="container-fluid py-3 services">
+        <div class="row g-0 col-md-7 overflow-hidden " id="Neurology" >
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/neuro1-390x259.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 object-fit-cover">
             </div>
-            <div class="row contact-info position-relative g-0 mb-5">
-                <div class="col-lg-6">
-                    <a href="tel:+0836-2374877" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-phone text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Call Us</h5>
-                            <h2 class="text-white mb-0">0836-2374877, 94819139480</h2>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <a href="mailto:arivuhealthcare@gmail.com" class="d-flex justify-content-lg-center bg-primary p-4">
-                        <div class="icon-box-light flex-shrink-0">
-                            <i class="bi bi-envelope text-dark"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5 class="text-white">Mail Us</h5>
-                            <h2 class="text-white mb-0">arivuhealthcare@gmail.com
-                            </h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3>Book Appointment</h3>
-                    <form class="default-form pt-3" id="appointmentBooking">
-                        <div class="mb-3 d-flex " style="grid-gap: 10px">
-                            <select class="form-select mr-3" style="width: 120px;" id="nameTitle" name="nameTitle">
-                                <option selected value="MR">Mr</option>
-                                <option value="MRS">Mrs</option>
-                                <option value="MS">Ms</option>
-                                <option value="DR">Dr</option>
-                            </select>
-                            <input type="text" class="form-control" id="fullName" placeholder="Your Name"
-                                name="fullName">
-                        </div>
-                        <div class="mb-3">
-                            <input type="number" class="form-control" id="phoneNumber" pattern="[0-9]{10}"
-                                placeholder="Phone Number" name="phoneNumber">
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select" id="doctorList" name="doctorCode">
-                            </select>
-                        </div>
-                        <div id="setTimeSlot" class="time-slot d-flex justify-content-end">
-                            <a class="nav-link active" aria-current="page" href="#" onclick="return false;">Select
-                                Slot</a>
-                        </div>
-                        <div class="modal fade" id="timeSlotModal" tabindex="-1" aria-labelledby="timeSlotModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="timeSlotModalLabel">Select Time Slot</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="d-flex align-items-center justify-content-end">
-                                            <span class="mx-2">Select Date</span>
-                                            <input type="date" class="form-control" id="doctorDate"
-                                                style="width: 200px">
-                                        </div>
-                                        <div class="d-flex flex-wrap justify-content-between" id="timeSlotContainer">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="alert alert-danger mt-3" role="alert" id="validationError">
-                        </div>
-                        <div class="form-input d-flex justify-content-end " style="padding-top: 20px;">
-                            <button id="submitAppointment" class="theme-btn btn btn-primary py-2 px-3" name="submit"
-                                value="Submit Now">
-                                Book Appointment
-                            </button>
-                        </div>
-                    </form>
-                </div>
 
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <iframe class="w-100 h-100"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&q=place_id:ChIJw3HrlzbXuDsRG28HZoKgmXg"
-                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
-                </div>
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">Neurology</h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr. Veeranna Gadad</span></h4>
+                <p class="card-text">The Neuro care sector provides the service for most complex neurological disorders
+                    and advancing innovations including epilepsy, movement disorders, dementias and other cognitive
+                    conditions, stroke and cerebrovascular diseases, neuro-oncology, multiple sclerosis and
+                    demyelinating disorders, autoimmune neurology, paediatric neurology, neurophysiology, headache,
+                    neuromuscular diseases, peripheral nerve, sleep neurology, and speech pathology.</p>
+                <p class="card-text">
+                    Services Available
+                    <br>* Neck pain, Back pain
+                    <br>* Spinal cord diseases
+                    <br>* Neuropathies
+                    <br>* Alzheimer's disease (AD)
+                    <br>* Epilepsy
+                    <br>* Parkinson's disease
+                    <br>* Migraines
+                    <br>* Dizziness and vertigo
+                    <br>* Head injury
+                    <br>* Stroke (CVA, cerebrovascular attack)
+                    <br>* Dementia
+                    <br>* Tumors of the nervous system
+                    <br>* Multiple sclerosis and other demyelinating diseases
+                    <br>* Infections of the brain or spinal cord (including meningitis)
+                    <br>* Prion diseases (a type of infectious agent)
+                    <br>* Complex regional pain syndrome (a chronic pain condition)&nbsp;<br>
+                </p>
+                </p>
+            </div>
+        </div>
+        <div class="row g-0 col-md-7 overflow-hidden " id="Dentistry">
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/pedo4-379x342.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 object-fit-cover">
+            </div>
+
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">Dentistry</h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr Archana P Betur, Dr Sumanth Unkalkar</span>
+                </h4>
+                <p class="card-text">*General Dental Services
+                    <br>*Paediatric Dentistry through New bornscto Teenage.
+                    <br>* Preventive Dentistry for all
+                    <br>*Simple &amp; Complcated Extractions
+                    <br>*Wisdom teeth removals
+                    <br>*Minor Oral Surgical Procedures
+                    <br>*Teeth Implants (Individual Teeth + Full Mouth Implants)
+                    <br>
+                    <br>*Hair Implants
+                    <br>*Root Canal Treatments, Post &amp; Core
+                    <br>*Caps, Bridges, Veneers, Laminates
+                    <br>*Removable Partial Dentures, Fixed Partial Dentures, Complete Dentures
+                    <br>*Orthodontic Treatments
+                    <br>*Flap Surgeries, Scaling &amp; Curettage
+                    <br>*Lasers in Dentistry
+                </p>
+            </div>
+        </div>
+        <div class="row g-0 col-md-7 overflow-hidden " id="Pulmonology" >
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/pulmonology2-402x436.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 object-fit-cover">
+            </div>
+
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">Pulmonology</h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr. Shrikanth Hiremath</span>
+                </h4>
+                <p class="card-text">As one of the top quality respiratory care, we provide the most current, innovative
+                    options available for diagnosing and treating all lung, breathing and allergy conditions.
+                    <br>Services we render for:
+                    <br>* Allergies and Immune System Diseases
+                    <br>* Asthma
+                    <br>* Breathing-related Sleep Disorders
+                    <br>* Critical Care Conditions
+                    <br>* Interstitial Lung Diseases
+                    <br>* Lung Infections (Respiratory Infections)
+                    <br>* Obstructive Lung Disorders
+                    <br>* Pleural and Mediastinal Disorders
+                    <br>* Pulmonary Hypertension and Pulmonary Vascular Diseases
+                    <br>* Signs and Symptoms of Respiratory Conditions
+                    <br>* Smoking Hazards and Cessation&nbsp;<br>
+                </p>
+            </div>
+        </div>
+        <div class="row g-0 col-md-7 overflow-hidden " id="Psychiatry" >
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/psychiatry-385x499.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 object-fit-cover">
+            </div>
+
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">
+                    Psychiatry</h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr. Sachin B S</span>
+                </h4>
+                <p class="card-text">Services available
+                    <br>* Dementia
+                    <br>* Mental retardation
+                    <br>* Sexual disorders
+                    <br>* Anxiety &amp; Personality disorders
+                    <br>* Couselling services
+                    <br>* Psychotherapies&nbsp;<br>
+                </p>
+            </div>
+        </div>
+        <div class="row g-0 col-md-7 overflow-hidden " id="GeneralMedicine" >
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/general-medicine-534x249.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">
+                    General Medicine </h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr. Seetaram N K</span>
+                </h4>
+                <p class="card-text">For Diabetics, Hypertension</p>
+            </div>
+        </div>
+        <div class="row g-0 col-md-7 overflow-hidden " id="GeneralSurgery" >
+            <!-- Left Section with Image -->
+            <div class="col-md-5 d-flex align-items-center">
+                <img src="/img/services/surgery-534x434.jpg" alt="Speciality Image"
+                    class="img-fluid w-100 object-fit-cover">
+            </div>
+
+            <!-- Right Section with Content -->
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+                <h2 class="card-title mb-2">
+                    General surgery </h2>
+                <h4 class="text-muted mb-1">Doctor: <span class="fw-bold">Dr. Prashanth Tubachi</span>
+                </h4>
+                <p class="card-text">All gen surgical problems including , Appendicitis, Hernia
+                    &nbsp;&nbsp;<br><br>Minimally invasive surgery:
+                    <br>* Laparoscopy
+                    <br>* Endoscopy
+                    <br>* Arthroscopy
+                    <br>* Bronchoscopy
+                    <br>* Cystoscopy
+                    <br>* Gastroscopy
+                    <br>* Hysteroscopy
+                    <br>* Laryngoscopy
+                    <br>* Sigmoidoscopy &nbsp;<br>
+                </p>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- Service End -->
 
 
     <!-- Footer Start -->
@@ -317,7 +330,7 @@
                             <h4 class="text-light mb-4">Quick Links</h4>
                             <a class="btn btn-link" href="about.html">About Us</a>
                             <a class="btn btn-link" href="team.html">Our Team</a>
-                            <a class="btn btn-link" href="speciality.html">Our Speciality</a>
+                            <a class="btn btn-link" href="speciality.html">Our Services</a>
                             <a class="btn btn-link" href="specialities.html">Out Specialities</a>
                             <!-- <a class="btn btn-link" href=""></a> -->
                         </div>
@@ -349,7 +362,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square col-md-7-circle back-to-top"><i
             class="bi bi-arrow-up"></i></a>
 
 
@@ -361,13 +374,24 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="./js/bookAppointment.js"></script>
+    <style>
+        .services .row {
+            max-width: 1400px;
+            margin: 50px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .services .row:nth-child(even) {
+            flex-direction: row-reverse;
+            padding-right: 20px;
+        }
+        .services .row:nth-child(odd) {
+            padding-left: 20px;
+        }
+    </style>
 </body>
 
 </html>
