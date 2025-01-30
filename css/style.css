@@ -644,3 +644,7 @@
     max-height: 600px;
     object-fit: cover;
 }
+
+.round {
+    border-radius: 6px;
+}
